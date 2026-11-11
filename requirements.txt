@@ -1,0 +1,4 @@
+openai>=1.50
+anthropic>=0.100
+rich>=13
+pytest>=8

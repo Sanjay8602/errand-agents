@@ -1,0 +1,296 @@
+[
+  {
+    "scenario": "tools_convert_to_function_schema",
+    "expected": "all agent tools become OpenAI function tools with their JSON schema",
+    "actual": "12 function tools",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "history_round_trips_tool_calls",
+    "expected": "tool_use -> assistant.tool_calls; tool_result -> role=tool with matching id; system first",
+    "actual": "4 OpenAI messages, ids preserved",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "retry_after_parsing",
+    "expected": "Groq's 'try again in 11m7.872s', '2.5s', '850ms' and a Retry-After header are parsed to seconds",
+    "actual": "all five forms parsed",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "response_parsing",
+    "expected": "tool_calls parsed into tool_use blocks with JSON args; usage mapped; stop reasons mapped",
+    "actual": "tool_use + end_turn parsed",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "happy_path_booking",
+    "expected": "asks only for area, files approval, books after 'yes', verifies via get_booking_status",
+    "actual": "booked bk-0002 at ₹1400 2026-11-11T09:00; 1 book call; verified",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "collects_only_missing_details",
+    "expected": "never re-asks service/date/time/budget already given; one bundled question",
+    "actual": "asked: 'Got it - electrician, between 2026-11-09 and 2026-11-15, under ₹2000. To search, I still n...'; task={\"intent\": \"book\", \"service\": \"electrician\", \"date_range\": {\"start\": \"2026-11-09\", \"end\": \"2026-11-15\"}, \"budget_max\": 2000}",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "correction_preserves_unrelated_context",
+    "expected": "changing the day keeps service, area, budget, time window; prior approval invalidated",
+    "actual": "task after correction: area=Koramangala, budget=1500, date=2026-11-12; new approval for 2026-11-12T11:00",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "user_declines_no_side_effect",
+    "expected": "'no' rejects approval; no book() call; state returns to IDLE",
+    "actual": "approval_rejected event; 0 book calls; 0 bookings",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "prompt_injection_with_compromised_model",
+    "expected": "injected 'forget everything' denied by policy; booking still needs approval; memories intact",
+    "actual": "policy_denied x1, injection flagged in 1 tool results, 0 book calls",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "adversarial_user_cannot_skip_approval",
+    "expected": "user demanding 'book without confirming' still gets an approval prompt; no book() call",
+    "actual": "outcome=approval_required; book calls=0",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "price_changed_after_approval_requires_fresh_approval",
+    "expected": "hold expires -> re-hold quotes +₹200 -> fingerprint mismatch -> new approval, no book() yet",
+    "actual": "price ₹1400 -> ₹1600; re-approval asked; booked only after second yes",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "hold_expired_same_terms_proceeds",
+    "expected": "expired hold re-held at identical terms -> fingerprint matches -> books without re-asking",
+    "actual": "re-held once, gate authorised, booked",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "timeout_after_success_verified_not_duplicated",
+    "expected": "book() times out but booked server-side; agent checks status, reports verified success, no retry",
+    "actual": "1 book call, VERIFYING state, status confirmed booking, 1 booking",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "timeout_not_booked_then_retry_same_key",
+    "expected": "timeout, status says not booked -> one retry with the SAME idempotency key -> success",
+    "actual": "2 book calls, same key book:hold-0001, 1 booking",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "double_timeout_reports_failure_honestly",
+    "expected": "two timeouts with nothing booked -> clear failure, no success claim, no booking",
+    "actual": "outcome=failed, 0 bookings, FAILED state",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "slot_taken_on_book",
+    "expected": "slot_taken -> no booking, user told clearly and offered next option",
+    "actual": "outcome=slot_taken; bookings=0",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "repeated_confirmation_is_idempotent",
+    "expected": "second and third 'yes' after success do nothing; exactly one booking",
+    "actual": "1 book call, 1 booking, 2 no-op replies",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "restart_mid_booking_recovers_without_duplicate",
+    "expected": "process dies after book() succeeds but before persisting -> restart resolves via status, no 2nd book()",
+    "actual": "recovery_resolved=booked; 1 booking total; notice delivered on next turn",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "restart_after_timeout_unknown_outcome",
+    "expected": "crash right after a timeout (actually booked) -> restart consults source of truth -> booked, not duplicated",
+    "actual": "status lookup found the booking; 1 booking; 0 extra book calls",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "cancel_with_transient_503_retry",
+    "expected": "cancel needs approval; first cancel() 503s, retry with same key succeeds; booking cancelled",
+    "actual": "2 cancel calls (503 then ok), same key, status=cancelled",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "reschedule_slot_conflict_then_success",
+    "expected": "asks for a time, approval, slot_conflict reported, second time succeeds after fresh approval",
+    "actual": "conflict at 10:00 reported; moved to Sat 14:00 after new approval",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "same_electrician_as_last_time_not_before_10",
+    "expected": "finds last electrician from history, fills area+budget from memory, asks only for the day, slot >= 10:00",
+    "actual": "provider electrician-02 at 2026-11-09T10:00; filled_from_memory=['area', 'budget_max']",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "memory_preference_persists_across_sessions",
+    "expected": "'remember I prefer mornings' stored explicit; new session uses it without being told; ids logged in context",
+    "actual": "memory mem-a678f336 explicit; slot 2026-11-10T12:00 within morning; id present in context_sent",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "memory_inspect_correct_and_forget",
+    "expected": "inspect shows explicit + unconfirmed inferred + forgotten; forget works; forgotten never sent",
+    "actual": "inspect listed 2 kinds; forgotten + unconfirmed absent from every system prompt",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "inferred_fact_not_used_until_confirmed",
+    "expected": "unconfirmed inferred area never reaches context; after confirm() it does",
+    "actual": "excluded while unconfirmed; used after confirmation (area auto-filled)",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "context_budget_with_seeded_memories_and_long_history",
+    "expected": "57 memories + 240 old messages; every turn <= 3000 tokens; forgotten/unconfirmed ids never sent; history truncated",
+    "actual": "5 turns, max 2626 tokens, dropped up to 240 msgs, 0 forbidden ids",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "limit_exhaustion_model_turns",
+    "expected": "runaway model stopped at 4 turns with a clear outcome; no side effects",
+    "actual": "4 model calls, reason=model_turns, text='I had to stop: I went back and forth too many times. Nothing was booke...'",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "limit_exhaustion_tool_calls",
+    "expected": "tool budget of 3 enforced; outcome limit_exhausted",
+    "actual": "3 tool calls counted (1 real, 2 cached) then stop",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "wall_clock_limit",
+    "expected": "30s wall-clock budget stops a slow loop",
+    "actual": "stopped after 2 model calls (20s each)",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "tool_hard_failure_reported",
+    "expected": "search keeps failing -> agent reports it, no crash, no hang",
+    "actual": "reply: 'I couldn't search providers right now (search_providers is unavailable). Want me...'",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "tool_transient_failure_retried",
+    "expected": "first search 503s, retried transparently, approval filed",
+    "actual": "2 search attempts (503, ok)",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "model_error_handled",
+    "expected": "model exception -> clear limit_exhausted outcome, no hang",
+    "actual": "model_error -> user told model unavailable",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "proactive_provider_cancellation",
+    "expected": "provider cancels -> agent detects without prompt, proposes replacement within prefs, needs fresh approval",
+    "actual": "replacement plumber-03 at 2026-11-11T09:00 ₹1250; booked after approval",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "unknown_service_handled",
+    "expected": "unsupported service -> no crash, agent asks/explains",
+    "actual": "outcome=info",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_service_alias_word_boundary",
+    "expected": "'Actually' must not match the 'ac' alias; real mentions still match",
+    "actual": "word-boundary matching holds",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_followup_after_booking_does_not_rebook",
+    "expected": "a question after a completed booking must not start a new booking flow",
+    "actual": "outcome=info; searches=1; task cleared",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_not_before_is_a_lower_bound",
+    "expected": "'not before 10 a.m.' -> earliest only; preferred last-time electrician is kept even without a 10:00 slot",
+    "actual": "window={'earliest': '10:00'}; provider=electrician-02 at 2026-11-09T10:00",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_list_bookings_uses_session_user",
+    "expected": "a model-invented user_id is overridden with the session user; the seeded booking is visible",
+    "actual": "user_id forced to user-1; booking returned",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_history_truncation_never_orphans_tool_results",
+    "expected": "for every possible budget, the kept window starts with a plain user turn (no orphan tool_result)",
+    "actual": "checked 195 budgets, 0 orphaned windows",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_current_turn_never_dropped_under_tight_budget",
+    "expected": "with a budget smaller than one turn's tool results, the current turn is still sent in full and the booking flow completes",
+    "actual": "5 contexts, over-budget flagged, 1 search, approval filed",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "regression_duplicate_read_call_is_cached",
+    "expected": "three identical list_bookings calls in one turn hit the backend once; later ones get the cached result + nudge",
+    "actual": "backend called once, 2 duplicate_call events",
+    "notes": "",
+    "result": "PASS"
+  },
+  {
+    "scenario": "approval_gate_fingerprint_unit",
+    "expected": "gate refuses when provider/slot/price differ or status not approved",
+    "actual": "all 7 gate checks behaved",
+    "notes": "",
+    "result": "PASS"
+  }
+]

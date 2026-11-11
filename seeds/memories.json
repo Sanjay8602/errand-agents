@@ -1,0 +1,859 @@
+{
+  "memories": [
+    {
+      "id": "mem-0001",
+      "key": "preferred_area",
+      "value": "Koramangala",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "user: I live in Koramangala",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 1
+    },
+    {
+      "id": "mem-0002",
+      "key": "earliest_time",
+      "value": "10:00",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "user: never before 10 am",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 1
+    },
+    {
+      "id": "mem-0003",
+      "key": "default_budget",
+      "value": "2000",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "user: keep it under 2000 unless I say",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 2
+    },
+    {
+      "id": "mem-0004",
+      "key": "contact_preference",
+      "value": "WhatsApp before arrival",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 3
+    },
+    {
+      "id": "mem-0005",
+      "key": "home_type",
+      "value": "2BHK, 3rd floor, no lift",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 4
+    },
+    {
+      "id": "mem-0006",
+      "key": "pets",
+      "value": "one dog - technicians should be okay with dogs",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 4
+    },
+    {
+      "id": "mem-0007",
+      "key": "preferred_provider:electrician",
+      "value": "Ramesh Fix-It (electrician-02)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "electrician"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 2
+    },
+    {
+      "id": "mem-0008",
+      "key": "preferred_provider:plumber",
+      "value": "any verified plumber",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "plumber"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 3
+    },
+    {
+      "id": "mem-0009",
+      "key": "ac_model",
+      "value": "Daikin 1.5T split, 2 units",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "ac servicing"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 3
+    },
+    {
+      "id": "mem-0010",
+      "key": "cleaning_scope",
+      "value": "kitchen + 2 bathrooms, no balcony",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "cleaning"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 3
+    },
+    {
+      "id": "mem-0011",
+      "key": "prefers_upi",
+      "value": "yes",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "paid by UPI 3 times",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 5
+    },
+    {
+      "id": "mem-0012",
+      "key": "typical_day",
+      "value": "weekday mornings",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 5
+    },
+    {
+      "id": "mem-0013",
+      "key": "guess_second_home",
+      "value": "Whitefield",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "searched Whitefield once",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 5
+    },
+    {
+      "id": "mem-0014",
+      "key": "guess_budget_flexible",
+      "value": "will go 20% over budget",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 5
+    },
+    {
+      "id": "mem-0015",
+      "key": "guess_dislikes_provider",
+      "value": "plumber-03",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "plumber"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 5
+    },
+    {
+      "id": "mem-0016",
+      "key": "guess_vegetarian",
+      "value": "yes",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0017",
+      "key": "old_area",
+      "value": "Indiranagar",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "moved in 2025",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 1
+    },
+    {
+      "id": "mem-0018",
+      "key": "old_phone_brand",
+      "value": "Samsung",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0019",
+      "key": "ex_roommate_pref",
+      "value": "no visits after 7 pm",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 2
+    },
+    {
+      "id": "mem-0020",
+      "key": "note_00",
+      "value": "likes running on weekends (0)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0021",
+      "key": "note_01",
+      "value": "likes chess on weekends (1)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0022",
+      "key": "note_02",
+      "value": "likes yoga on weekends (2)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0023",
+      "key": "note_03",
+      "value": "likes gardening on weekends (3)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0024",
+      "key": "note_04",
+      "value": "likes cycling on weekends (4)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0025",
+      "key": "note_05",
+      "value": "likes cycling on weekends (5)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0026",
+      "key": "note_06",
+      "value": "likes running on weekends (6)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0027",
+      "key": "note_07",
+      "value": "likes gardening on weekends (7)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0028",
+      "key": "note_08",
+      "value": "likes baking on weekends (8)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0029",
+      "key": "note_09",
+      "value": "likes gardening on weekends (9)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0030",
+      "key": "note_10",
+      "value": "likes cycling on weekends (10)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0031",
+      "key": "note_11",
+      "value": "likes yoga on weekends (11)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0032",
+      "key": "note_12",
+      "value": "likes yoga on weekends (12)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0033",
+      "key": "note_13",
+      "value": "likes cycling on weekends (13)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0034",
+      "key": "note_14",
+      "value": "likes baking on weekends (14)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0035",
+      "key": "note_15",
+      "value": "likes cycling on weekends (15)",
+      "kind": "explicit",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 8
+    },
+    {
+      "id": "mem-0036",
+      "key": "last_rating:plumber",
+      "value": "5 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "plumber"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0037",
+      "key": "avg_spend:plumber",
+      "value": "₹1469",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "plumber"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0038",
+      "key": "last_rating:electrician",
+      "value": "3 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "electrician"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0039",
+      "key": "avg_spend:electrician",
+      "value": "₹2293",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "electrician"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0040",
+      "key": "last_rating:ac servicing",
+      "value": "5 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "ac servicing"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0041",
+      "key": "avg_spend:ac servicing",
+      "value": "₹853",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "ac servicing"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0042",
+      "key": "last_rating:cleaning",
+      "value": "3 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "cleaning"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0043",
+      "key": "avg_spend:cleaning",
+      "value": "₹1891",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "cleaning"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0044",
+      "key": "last_rating:carpenter",
+      "value": "5 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "carpenter"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0045",
+      "key": "avg_spend:carpenter",
+      "value": "₹1793",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "carpenter"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0046",
+      "key": "last_rating:pest control",
+      "value": "3 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "pest control"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0047",
+      "key": "avg_spend:pest control",
+      "value": "₹1781",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "pest control"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0048",
+      "key": "last_rating:appliance repair",
+      "value": "5 stars",
+      "kind": "inferred",
+      "confirmed": true,
+      "status": "active",
+      "tags": [
+        "appliance repair"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 6
+    },
+    {
+      "id": "mem-0049",
+      "key": "avg_spend:appliance repair",
+      "value": "₹1412",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "active",
+      "tags": [
+        "appliance repair"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 7
+    },
+    {
+      "id": "mem-0050",
+      "key": "stale_0",
+      "value": "stale fact 0",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0051",
+      "key": "stale_1",
+      "value": "stale fact 1",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0052",
+      "key": "stale_2",
+      "value": "stale fact 2",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0053",
+      "key": "stale_3",
+      "value": "stale fact 3",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0054",
+      "key": "stale_4",
+      "value": "stale fact 4",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0055",
+      "key": "stale_5",
+      "value": "stale fact 5",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0056",
+      "key": "stale_6",
+      "value": "stale fact 6",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    },
+    {
+      "id": "mem-0057",
+      "key": "stale_7",
+      "value": "stale fact 7",
+      "kind": "inferred",
+      "confirmed": false,
+      "status": "forgotten",
+      "tags": [
+        "general"
+      ],
+      "source": "",
+      "created_at": "2026-10-01T09:00:00",
+      "updated_at": "2026-10-01T09:00:00",
+      "priority": 9
+    }
+  ]
+}

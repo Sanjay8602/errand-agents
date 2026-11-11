@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "errand-agent"
+version = "0.1.0"
+description = "Chat-based agent that arranges home-service errands against a mocked provider environment."
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.50",
+    "anthropic>=0.100",
+    "rich>=13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["errand_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
