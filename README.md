@@ -65,6 +65,13 @@ traces/             timeout_after_success.jsonl
 
 `pytest` runs 42 scenarios with simulated users against the scripted model and writes `EVAL_TABLE.md` and `eval_results.json`. Scenarios assert outcomes and invariants (e.g. every `book()` in the mock was preceded by `approval_granted` with the same fingerprint; exactly one booking exists after a timeout-after-success). Coverage includes adversarial input, prompt injection with a compromised model, changed price after approval, timeout after possible success, slot conflict, repeated confirmation, memory correction/forgetting, restart mid-booking, proactive cancellation, context budget with 57 memories + 240 old messages, limit exhaustion (turns, tool calls, wall clock) and hard/transient tool failures.
 
+## Demo
+```
+Link: https://drive.google.com/file/d/1fjdsY3v0hwMZUDgbC8wrjMqDaVkGu8Df/view?usp=sharing
+```
+
+
+
 ## Notes on the live model
 
 Live providers go through one OpenAI-compatible adapter (`llm/openai_model.py`) with per-provider presets. Keys are read from the environment or from a `.env` file at the repo root (git-ignored; copy `.env.example`).
